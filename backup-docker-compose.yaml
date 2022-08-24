@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=postgres
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    container_name: Netflix-db
+    volumes:
+      - ./data/db:/var/lib/postgresql/data

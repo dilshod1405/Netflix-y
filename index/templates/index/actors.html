@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actors</title>
+</head>
+<body>
+
+<h2>Actors: </h2>
+
+    <ul>
+        {% for y in b %}
+            {% csrf_token %}
+            <li>{{ y.name }}  {{ y.birthdate }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
