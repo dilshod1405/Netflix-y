@@ -23,4 +23,4 @@ jobs:
       - name: install Requirements
         run: pip install -r requirements.txt
       - name: Run Tests
-        run: manage.py test
+        run: pytest
