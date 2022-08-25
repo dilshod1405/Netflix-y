@@ -1,4 +1,4 @@
-name: Netflix CD
+name: Django CD
 on:
   push:
     branches: [master]
